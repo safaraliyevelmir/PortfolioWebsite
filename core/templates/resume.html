@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+<main>
+    <div class="content">
+        <section id="resume">
+            <div class="blog resume-div" style="color: white;">
+                <div class="skills">
+                    <div class="title">
+                        <h1>MY SKILLS</h1>
+                        <span>MY SKILLS</span>
+                    </div>
+                    <div class="skill-container">
+                        {% for skill in skills %}
+                        <div class="skill-box">
+                            {{skill.name}}
+                        </div>                      
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <div class="resume">
+                    <div class="title">
+                        <h1>RESUME</h1>
+                        <span>RESUME</span>
+                    </div>
+
+                    <div class="resume-container">
+                        <div class="resume-title">
+                            <span>
+                                <i class="fas fa-briefcase"></i>
+                            </span>
+                            <h1>Working Experience</h1>
+                        </div>
+
+                        <div class="resume-inner">
+                            {% for work in work_experiences %}
+                            <div class="work">
+                                <div class="date">{{work.start_date}} - {{work.end_date}}</div>
+                                <div class="info">
+                                    <h5>{{work.position}}</h5>
+                                    <p class="place">{{work.company}}</p>
+                                    <p class="text">{{work.description}}</p>
+
+                                </div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="resume">
+                    <div class="resume-container">
+                        <div class="resume-title">
+                            <span>
+                                <i class="fas fa-user-graduate"></i>
+                            </span>
+                            <h1>Education Experience</h1>
+                        </div>
+
+                        <div class="resume-inner">
+                            {% for education in education_experiences %}
+                            <div class="work">
+                                <div class="date">{{education.start_date}} - {{education.end_date}}</div>
+                                <div class="info">
+                                    <h5>{{education.university}}</h5>
+                                    <p class="place">{{education.degree}}</p>
+                                    <p class="text">{{education.description}}</p>
+
+                                </div>
+                            </div>                        
+                            {% endfor %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+{% endblock content %}
+
