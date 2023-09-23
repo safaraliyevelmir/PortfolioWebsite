@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-
+{% load static %}
 
 {% block content %}
 <!-- Content Start -->
@@ -16,31 +16,22 @@
 
                     <div class="content-aboumtme">
                         <div class="img">
-                            <img src="/img/about-image.jpg" alt="">
+                            <img src="{% static 'img/bg.jpg' %}" alt="">
                         </div>
                         <div class="info">
-                            <h1>I am <span>Safaraliyev Elmir</span></h1>
+                            <h1>I am <span>{{person.full_name}}</span></h1>
 
-                            <p>I am a frontend web developer. I can provide clean code and pixel perfect design. I also
-                                make website more & more interactive with web animations.</p>
+                            <p>{{person.about_me}}</p>
 
                             <table>
                                 <tbody>
                                     <tr>
-                                        <td>Full name</td>
-                                        <td class="info-2">Elmir</td>
+                                        <td>Open to work</td>
+                                        <td class="info-2">{{person.open_to_work_text}}</td>
                                     </tr>
                                     <tr>
-                                        <td>Mark</td>
-                                        <td class="info-2">Otto</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td class="info-2">Otto</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Mark</td>
-                                        <td class="info-2">Otto</td>
+                                        <td>Freelancer</td>
+                                        <td class="info-2">{{person.is_freelancer_text}}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -62,24 +53,19 @@
                     <div class="content-services">
                         <div class="service-box">
                             <div class="icon">
-                                <i class="fas fa-code"></i>
+                                <i class="fas fa-terminal"></i>
                             </div>
-                            <div class="title-service">Front-End</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
+                            <div class="title-service">Back-end</div>
+                            <p>
+                                I am a backend developer proficient in FastAPI, Django, Flask, and Chalice.
+                            </p>
                         </div>
                         <div class="service-box">
                             <div class="icon">
                                 <i class="fas fa-database"></i>
                             </div>
-                            <div class="title-service">Back-End</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
-                        </div>
-                        <div class="service-box">
-                            <div class="icon">
-                                <i class="fas fa-code"></i>
-                            </div>
-                            <div class="title-service">Front-End</div>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem tenetur ratione quod.</p>
+                            <div class="title-service">Data Engineering</div>
+                            <p>I am a data engineer with expertise in AWS cloud practices, SQL, and Apache Airflow.</p>
                         </div>
                     </div>
                 </div>

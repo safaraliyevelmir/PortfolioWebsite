@@ -17,6 +17,19 @@ class Person(models.Model):
     github_profile = models.URLField()
     linkedin_profile = models.URLField()
     phone_number = models.CharField(max_length=128)
+    open_to_work = models.BooleanField(default=False)
+    is_freelancer = models.BooleanField(default=False)
+
+    @property
+    def open_to_work_text(self):
+        return "Yes" if self.open_to_work else "No"
+    
+    @property
+    def is_freelancer_text(self):
+        return "Yes" if self.is_freelancer else "No"
+    @property
+    def full_name(self):
+        return f"{self.name} {self.surname}"
 
     def __str__(self):
         return f"{self.name} {self.surname}"
@@ -45,7 +58,6 @@ class Contact(models.Model):
 
     def __str__(self):
         return f"{self.name} - {self.subject}"
-
 
 class EducationExperience(models.Model):
     university = models.CharField(max_length=128)
