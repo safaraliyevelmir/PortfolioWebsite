@@ -6,6 +6,7 @@ __pycache__/
 db.sqlite3
 *.log
 
+
 # Virtual environment
 .venv/
 venv/
@@ -26,11 +27,11 @@ env/
 *.swp
 
 # Media and static files (uncomment these lines if you use Django's default file storage)
-# media/
-# static/
+media/
+static/
 
 # Local development settings (uncomment if you use different local settings files)
-# settings/local.py
+settings/local.py
 
 # Ignore sensitive or secret files (uncomment if you store secrets in files)
-# secrets.json
+secrets.json
