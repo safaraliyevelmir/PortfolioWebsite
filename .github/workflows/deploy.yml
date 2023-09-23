@@ -27,7 +27,8 @@ jobs:
 
     - name: Deploy Django Project
       run: |
-        cd /var/www/PortfolioWebsite
+        ls 
+        cd /var/www/PortfolioWebsite/
         git pull origin main
     
     - name: Install dependencies
