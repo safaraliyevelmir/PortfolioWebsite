@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 KNOWLEDGE_LEVELS = (
     (3, "Expert"),
@@ -38,7 +39,7 @@ class Person(models.Model):
 class WorkExperience(models.Model):
     company = models.CharField(max_length=128)
     position = models.CharField(max_length=128)
-    description = models.TextField()
+    description = RichTextField()
 
     start_date = models.CharField(max_length=128)
     end_date = models.CharField(max_length=128)
@@ -62,7 +63,7 @@ class Contact(models.Model):
 class EducationExperience(models.Model):
     university = models.CharField(max_length=128)
     degree = models.CharField(max_length=128)
-    description = models.TextField()
+    description = RichTextField()
 
     start_date = models.CharField(max_length=128)
     end_date = models.CharField(max_length=128)
