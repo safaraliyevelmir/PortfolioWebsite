@@ -41,7 +41,7 @@
                                 <div class="info">
                                     <h5>{{work.position}}</h5>
                                     <p class="place">{{work.company}}</p>
-                                    <p class="text">{{work.description}}</p>
+                                    <p class="text">{{work.description | safe}}</p>
 
                                 </div>
                             </div>
@@ -67,7 +67,7 @@
                                 <div class="info">
                                     <h5>{{education.university}}</h5>
                                     <p class="place">{{education.degree}}</p>
-                                    <p class="text">{{education.description}}</p>
+                                    <p class="text">{{education.description | safe}}</p>
 
                                 </div>
                             </div>                        
