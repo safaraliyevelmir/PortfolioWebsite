@@ -1,1 +1,36 @@
-.venv
+# Django specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+db.sqlite3
+*.log
+
+# Virtual environment
+.venv/
+venv/
+env/
+*.egg-info/
+.Python
+
+# OS and IDE files
+.DS_Store
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.swp
+
+# Media and static files (uncomment these lines if you use Django's default file storage)
+# media/
+# static/
+
+# Local development settings (uncomment if you use different local settings files)
+# settings/local.py
+
+# Ignore sensitive or secret files (uncomment if you store secrets in files)
+# secrets.json
