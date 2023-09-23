@@ -24,7 +24,8 @@ jobs:
         host: ${{ secrets.DROPLET_IP }} 
         username: ${{ secrets.DROPLET_USERNAME }} 
         password: ${{ secrets.PASSWORD }} 
-        script: ["ls"]
+        script: |
+            ls
 
     - name: Deploy Django Project
       run: |
