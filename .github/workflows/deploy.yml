@@ -3,7 +3,7 @@ name: Deploy to DigitalOcean
 on:
   push:
     branches:
-      - main # Burada ana dalınızın adını kullanın
+      - main 
 
 jobs:
   deploy:
@@ -11,7 +11,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v2
 
     - name: Install dependencies
       run: |
@@ -19,7 +19,7 @@ jobs:
         pip install -r requirements.txt
 
     - name: SSH into DigitalOcean Droplet
-      uses: appleboy/ssh-action@master
+      uses: appleboy/ssh-action@v1
       with:
         host: ${{ secrets.DROPLET_IP }} 
         username: ${{ secrets.DROPLET_USERNAME }} 
@@ -31,9 +31,12 @@ jobs:
         cd /var/www/PortfolioWebsite/
         git pull origin main
     
-    - name: Install dependencies
+    - name: Activate Virtual Environment
       run: |
         source .venv/bin/activate
+    
+    - name: Install Dependencies
+      run: |
         pip install -r requirements.txt
     
     - name: Migrate Database
@@ -47,4 +50,3 @@ jobs:
     - name: Update Server
       run: |
         supervisorctl restart portfolio
-
